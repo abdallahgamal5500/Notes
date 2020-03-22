@@ -22,12 +22,12 @@ private Dialog dialog;
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                openDialog();
+                openDialog();
             }
         });
     }
-//    private void openDialog() {
-//        dialog.show(getSupportFragmentManager(),"My dialog");
-//    }
+    private void openDialog() {
+        dialog.show(getSupportFragmentManager(),"My dialog");
+    }
 
 }
