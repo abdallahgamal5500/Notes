@@ -10,9 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
+
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 private Button btn_add,dialog_btn_cancel,dialog_btn_add;
 private EditText dialog_title,dialog_text;
+private String dialog_title_value,dialog_text_value,id;
+private Map<String, String> date_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +41,11 @@ private EditText dialog_title,dialog_text;
         dialog_text=view.findViewById(R.id.dialog_text);
         dialog_btn_add=view.findViewById(R.id.dialog_btn_add);
         dialog_btn_cancel=view.findViewById(R.id.dialog_btn_cancel);
+        dialog_title_value=dialog_title.getText().toString();
+        dialog_text_value=dialog_text.getText().toString();
+
         builder.setView(view);
         builder.setCancelable(false);
-
         final AlertDialog dialog = builder.create();
         dialog.setCanceledOnTouchOutside(false);
         dialog_btn_cancel.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +57,16 @@ private EditText dialog_title,dialog_text;
         dialog_btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "ADD", Toast.LENGTH_SHORT).show();
+                if (dialog_text_value.isEmpty() || dialog_title_value.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                } else {
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("Notes");
+                    id = myRef.push().getKey();
+                    date_time = ServerValue.TIMESTAMP;
+                    Note_data note_data = new Note_data(dialog_title_value,dialog_text_value,id,date_time);
+                    myRef.child(id).setValue(note_data);
+                }
             }
         });
         dialog.show();
