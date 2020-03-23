@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300sp"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/border">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <EditText
         android:layout_width="match_parent"
@@ -66,5 +65,6 @@
         android:background="@color/colorAccent"
         android:id="@+id/dialog_btn_cancel"
         tools:ignore="RtlCompat" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
