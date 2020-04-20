@@ -4,16 +4,13 @@ import java.util.Map;
 
 public class Note_data {
 
-    private String title;
-    private String text;
-    private String id;
-    private Map<String, String> time;
+    private String title, text, id, date;
 
-    public Note_data(String title, String text, String id, Map<String, String> time) {
+    public Note_data(String title, String text, String id, String date) {
         this.title = title;
         this.text = text;
         this.id = id;
-        this.time = time;
+        this.date = date;
     }
 
     public String getTitle() {
@@ -40,11 +37,12 @@ public class Note_data {
         this.id = id;
     }
 
-    public Map<String, String> getTime() {
-        return time;
+    public String getDate() {
+        return date;
     }
 
-    public void setTime(Map<String, String> time) {
-        this.time = time;
+    public void setDate(String date) {
+        this.date = date;
     }
 }
+
