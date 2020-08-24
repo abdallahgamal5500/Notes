@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:fitsSystemWindows="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home_Page"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/home_logo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/home_welcome"/>
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_logo"
+        app:layout_constraintBottom_toTopOf="@id/home_sign_up_btn"
+        android:text="WELCOME"
+        android:layout_marginTop="50dp"
+        android:textColor="#fff"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:id="@+id/home_welcome"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_welcome"
+        app:layout_constraintBottom_toTopOf="@id/home_or"
+        android:background="@drawable/border"
+        android:textColor="#fff"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="50dp"
+        android:text="SIGN UP"
+        android:textSize="30dp"
+        android:id="@+id/home_sign_up_btn"
+        android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_sign_up_btn"
+            app:layout_constraintBottom_toTopOf="@id/home_login_btn"
+            android:text="OR"
+            android:layout_marginTop="25dp"
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:id="@+id/home_or"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_or"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/border"
+        android:textColor="#fff"
+        android:text="LOG IN"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="30dp"
+        android:id="@+id/home_login_btn"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

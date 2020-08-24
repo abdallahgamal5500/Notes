@@ -1,10 +1,13 @@
 package com.example.notes;
 
-import java.util.Map;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class Note_data {
 
     private String title, text, id, date;
+
+    public Note_data() {
+    }
 
     public Note_data(String title, String text, String id, String date) {
         this.title = title;
@@ -13,16 +16,21 @@ public class Note_data {
         this.date = date;
     }
 
+    public Note_data(String title, String date) {
+        this.title = title;
+        this.date = date;
+    }
+
+    public String getText() {
+        return text;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getText() {
-        return text;
     }
 
     public void setText(String text) {
